@@ -1,4 +1,5 @@
-def factorielle(n = int(input())):
+def factorielle():
+    n = int(input())
     if n < 0 :
         return 'Wtf'
     elif n == 0 :
@@ -8,9 +9,8 @@ def factorielle(n = int(input())):
         n *= i
     return n
 
-print(factorielle())
-
-def hyperfactorielle(n=int(input())):
+def hyperfactorielle():
+    n = int(input())
     if n < 0 :
         return 'Wtf'
     elif n == 0 :
@@ -20,9 +20,8 @@ def hyperfactorielle(n=int(input())):
         n*= i**i
     return n
 
-print(hyperfactorielle())
-
-def superfactorielle(n=int(input())):
+def superfactorielle():
+    n = int(input())
     if n < 0 :
         return 'Wtf'
     elif n == 0 :
@@ -32,14 +31,16 @@ def superfactorielle(n=int(input())):
         t *= factorielle(i)
     return t
 
-print(superfactorielle())
-
-def hyperpuissance(a=int(input()), n=int(input())):
+def hyperpuissance():
+    a, n =int(input()), int(input())
     if n == a == 0 :
         return 'Wtf'
+    t = a
+    for _ in range(n-1):
+        t = t**a
+    return t
     
-    
-    
+print(hyperpuissance())
 
 
 #Résultats
@@ -49,5 +50,5 @@ def hyperpuissance(a=int(input()), n=int(input())):
 #H(5) = 86400000
 #sF(4) = 288
 #sF(5) = 34560
-#2ii4 = 
-#9ii2 = 
+#2ii4 = 256
+#9ii2 = 387420489
