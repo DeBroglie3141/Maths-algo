@@ -1,4 +1,6 @@
 def secante(a, b, n):
+    a, b = abs(a), abs(b)
+    a, b = min(a, b), max(a, b)
     for _ in range(n):
         c = (f(b)*a - f(a)*b) / (f(b) - f(a))
         if f(c) > 0 :
@@ -7,7 +9,7 @@ def secante(a, b, n):
             a = c
         else :
             return 'f(' + c + '= 0'
-    return c
+    return abs(c)
 
 def f(x):
     return x**2 -2

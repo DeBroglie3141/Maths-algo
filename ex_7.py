@@ -4,8 +4,7 @@ def factorielle():
         return 'Wtf'
     elif n == 0 :
         return 1
-    
-    for i in range(1,n):
+    for i in range(1, n + 1):
         n *= i
     return n
 
