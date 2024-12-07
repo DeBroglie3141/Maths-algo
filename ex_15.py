@@ -1,11 +1,12 @@
 def somme(A, B):
-    C = []
-    if len(A) > len(B):
-        for i in range(len(B)):
-            C.append(A[i] + B[i])
-        C = C + A[:len(B)]
-    else :
-        for i in range(len(A)):
-            C.append(A[i] + B[i])
-        C = C + A[:len(A)]
+    A.reverse(); B.reverse()
+    max_len = max(len(A), len(B))
+    C = [a + b for a, b in zip(A, B)]
+    C += A[len(B):] if len(A) > len(B) else B[len(A):]
+    C.reverse()
     return C
+
+# Tests
+A = [1, 2, 3, 4, 5]
+B = [6, 7, 8]
+print(somme(A, B))
