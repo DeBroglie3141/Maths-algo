@@ -6,7 +6,16 @@ def somme(A, B):
     C.reverse()
     return C
 
+def produit(A, B):
+    C = [0] * (len(A) + len(B) - 1) 
+    for i in range(len(A)) :
+        for j in range(len(B)):
+            C[i+j] += A[i] * B[j]
+    C.reverse()
+    return C
+
 # Tests
-A = [1, 2, 3, 4, 5]
-B = [6, 7, 8]
+A = [1, 2]
+B = [3, 4]
 print(somme(A, B))
+print(produit(A, B))
