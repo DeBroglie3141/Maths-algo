@@ -14,8 +14,15 @@ def produit(A, B):
     C.reverse()
     return C
 
+def eval(P, a):
+    n = 0
+    for i in range(len(P)):
+        n += P[i]*(a**i)
+    return n
+
 # Tests
 A = [1, 2]
-B = [3, 4]
+B = [-2, 3, 4]
 print(somme(A, B))
 print(produit(A, B))
+print(eval(B, -2))
